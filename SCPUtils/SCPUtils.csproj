@@ -76,7 +76,6 @@
     <Compile Include="Commands.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="EventHandlers.cs" />
-    <Compile Include="Extensions.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

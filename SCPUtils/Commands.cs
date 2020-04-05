@@ -1,5 +1,6 @@
 ﻿using EXILED;
 using System;
+using EXILED.Extensions;
 
 namespace SCPUtils
 {
