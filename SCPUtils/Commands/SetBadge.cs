@@ -78,7 +78,15 @@ namespace SCPUtils.Commands
                 }
 
                 databasePlayer.BadgeName = badge;
-                databasePlayer.BadgeExpire = DateTime.Now.AddMinutes(duration);
+                if (duration != 0)
+                {
+                    databasePlayer.BadgeExpire = DateTime.Now.AddMinutes(duration);
+                }
+                else if (duration == 0)
+                {
+                    //I could go look into how this database actually works and actually just make this a way of legit perma ranks, or... i can change one line of existing code.
+                    databasePlayer.BadgeExpire = DateTime.Now.AddYears(20);
+                }
 
 
                 Database.LiteDatabase.GetCollection<Player>().Update(databasePlayer);
