@@ -42,7 +42,12 @@ namespace SCPUtils.Commands
 
             databasePlayer.BadgeExpire = DateTime.MinValue;
             Database.LiteDatabase.GetCollection<Player>().Update(databasePlayer);
-            if (player != null) player.BadgeHidden = false;
+            if (player != null)
+            {
+                player.BadgeHidden = false;
+                //Badges will actually revoke now.
+                player.ReferenceHub.serverRoles.SetGroup(null, false, false, false);
+            }
             response = "Badge revoked!";
             return true;
 
